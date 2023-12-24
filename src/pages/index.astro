@@ -1,0 +1,32 @@
+---
+import NavBar from '../components/NavBar.astro'
+import Hero from '../components/Hero.astro'
+import WhatOurCustomersSay from '../components/WhatOurCustomersSay.astro';
+import ServicesWeOffer from '../components/ServicesWeOffer.astro';
+import HowWeWork from '../components/HowWeWork.astro';
+import ContactUs from '../components/HowToContactUs.astro';
+import Divider from '../components/Divider.astro';
+import HowToContactUs from '../components/HowToContactUs.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="bg-orange-100 text-gray-800">
+		<NavBar />
+		<Hero />
+		<Divider />
+		<ServicesWeOffer />
+		<Divider />
+		<HowWeWork />
+		<Divider />
+		<WhatOurCustomersSay />
+		<Divider />
+		<HowToContactUs />
+	</body>
+</html>

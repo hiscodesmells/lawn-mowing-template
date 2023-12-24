@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+
+---
+
+<div class="h-18 mx-auto px-4 flex flex-row text-gray-800">
+    <div>
+        <!-- Website Logo -->
+        <a href="#" class="flex items-center py-4 px-2">
+            <span class="font-extrabold text-xl md:text-xl">Tony Landscape & Building Services</span>
+        </a>
+    </div>
+    <div class="grow"></div>
+    <!-- Primary Navbar items -->
+    <!-- <div class="hidden md:flex items-center">
+        <a id="how-we-work-button" href="#about-us" class="py-4 px-4 font-semibold hover:text-green-600 transition duration-300">How we work</a>
+        <a id="" href="#testimonials" class="py-4 px-4 font-semibold hover:text-green-600 transition duration-300">What our customers say</a>
+        <a href="#" class="py-2 px-4 font-medium text-white bg-green-600 rounded hover:bg-green-500 hover:shadow-lg transition duration-200">Contact Us</a>
+    </div> -->
+
+    <!-- Mobile menu button -->
+    <div class="md:hidden flex items-center">
+        <button id="mobile-menu-button" class="outline-none">
+            <svg class=" w-6 h-6 text-gray-800"
+                x-show="!showMenu"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- mobile menu -->
+<div id="mobile-menu" class="hidden">
+    <ul>
+        <li><a id="services-we-offer-button" class="block p-4 hover:bg-green-600 transition duration-300">Services we offer</a></li>
+        <li><a id="how-we-work-button" class="block p-4 hover:bg-green-600 transition duration-300">How we work</a></li>
+        <li><a id="what-our-customers-say-button" class="block p-4 hover:bg-green-600 transition duration-300">What our customers say</a></li>
+        <li><a id="how-to-contact-us-button" class="block p-4 hover:bg-green-600 transition duration-300">How to contact us</a></li>
+    </ul>
+</div>
+
+<script>
+    const btn = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const servicesWeOffer = document.getElementById("services-we-offer-button");
+    const howWeWorkButton = document.getElementById('how-we-work-button');
+    const whatOurCustomersSayButton = document.getElementById('what-our-customers-say-button');
+    const howToContactUs = document.getElementById("how-to-contact-us-button");
+
+    btn?.addEventListener("click", () => {
+        menu?.classList.toggle("hidden");
+    });
+
+    howWeWorkButton?.addEventListener('click', () => {
+      document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
+      menu?.classList.toggle("hidden");
+    });
+    
+    whatOurCustomersSayButton?.addEventListener('click', () => {
+      document.getElementById('what-our-customers-say')?.scrollIntoView({ behavior: 'smooth' });
+      menu?.classList.toggle("hidden");
+    });
+
+    servicesWeOffer?.addEventListener('click', () => {
+      document.getElementById('services-we-offer')?.scrollIntoView({ behavior: 'smooth' });
+      menu?.classList.toggle("hidden");
+    });
+
+    howToContactUs?.addEventListener('click', () => {
+      document.getElementById('how-to-contact-us')?.scrollIntoView({ behavior: 'smooth' });
+      menu?.classList.toggle("hidden");
+    });
+</script>
+  
