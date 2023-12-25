@@ -6,17 +6,26 @@ import ServicesWeOffer from '../components/ServicesWeOffer.astro';
 import HowWeWork from '../components/HowWeWork.astro';
 import Divider from '../components/Divider.astro';
 import HowToContactUs from '../components/HowToContactUs.astro';
+import { SEO } from 'astro-seo';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<title>Tony Landscaping and Building services</title>
+		<meta name="description" content="Expert Garden Construction and Landscaping Services in Wembley"/>
+		<meta name="keywords" content="landscaping in wembley, garden contruction wembley, patio paving wembley">
+		<meta property="og:title" content="Tony Landscaping and Building services">
+		<meta property="og:description" content="Expert Garden Construction and Landscaping Services in Wembley">
+		<meta property="og:image" content="/assets/landscaping-small.webp">
+		<meta property="og:url" content="https://lawn-service-template.vercel.app/">
+		<meta property="og:type" content="website">
+
+		<!-- <link rel="icon" type="image" href="/assets/landscaping-small.webp" /> -->
+		<meta name="viewport" content="width=device-width" />z``	
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
 	</head>
-	<body class="bg-orange-100 text-gray-800">
+	<body class="bg-slate-100 text-gray-800">
 		<NavBar />
 		<Hero />
 		<Divider />

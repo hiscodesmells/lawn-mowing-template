@@ -20,8 +20,8 @@ import { Image } from "astro:assets";
 
     <!-- Mobile menu button -->
     <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="outline-none">
-            <svg class=" w-6 h-6 text-gray-800"
+        <button id="mobile-menu-button" class="p-4 outline-none" aria-label="mobile-menu-button">
+            <svg class="w-8 h-8 text-gray-800"
                 x-show="!showMenu"
                 fill="none"
                 stroke-linecap="round"
@@ -58,23 +58,23 @@ import { Image } from "astro:assets";
     });
 
     howWeWorkButton?.addEventListener('click', () => {
-      document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
-      menu?.classList.toggle("hidden");
+        menu?.classList.toggle("hidden");
+        document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
     });
     
     whatOurCustomersSayButton?.addEventListener('click', () => {
-      document.getElementById('what-our-customers-say')?.scrollIntoView({ behavior: 'smooth' });
-      menu?.classList.toggle("hidden");
+        menu?.classList.toggle("hidden");
+        document.getElementById('what-our-customers-say')?.scrollIntoView({ behavior: 'smooth' });
     });
 
     servicesWeOffer?.addEventListener('click', () => {
-      document.getElementById('services-we-offer')?.scrollIntoView({ behavior: 'smooth' });
-      menu?.classList.toggle("hidden");
+        menu?.classList.toggle("hidden");
+        document.getElementById('services-we-offer')?.scrollIntoView({ behavior: 'smooth' });
     });
 
     howToContactUs?.addEventListener('click', () => {
-      document.getElementById('how-to-contact-us')?.scrollIntoView({ behavior: 'smooth' });
-      menu?.classList.toggle("hidden");
+        menu?.classList.toggle("hidden");
+        document.getElementById('how-to-contact-us')?.scrollIntoView({ behavior: 'smooth' });
     });
 </script>
   
