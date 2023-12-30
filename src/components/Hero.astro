@@ -3,15 +3,18 @@ import { Image } from "astro:assets";
 import HeroImage from "../assets/landscaping.webp"
 
 ---
-<div class="p-4 text-gray-800">
-    <Image class="h-96 rounded-md overflow-hidden shadow-md" src={HeroImage} alt="lanscaping-image"  quality="mid" loading="eager"/>
-    <div class="p-4 text-center">
-        <h1 class="text-4xl my-2 md:text-6xl font-black tracking-tight">Your landscaping needs <span class="text-green-700 underline">end</span> here.</h1>
-        <p class="my-2 ">Expert <span class="font-semibold">Garden Construction</span> and <span class="font-semibold">Landscaping Services</span> in Wembley</p>
-        <a id="contact-us-button" class="inline-block my-2 px-8 py-4 font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Contact Us</a>
+<div class="p-4 lg:px-16 lg:mb-8 md:px-8 md:mb-4 text-gray-800 flex flex-col items-center justify-center md:gap-4 md:flex-row-reverse ">
+    <div class="md:flex-1 md:flex md:items-center md:justify-center">
+        <Image class="w-96 lg:w-3/4 rounded-md overflow-hidden shadow-md" src={HeroImage} alt="lanscaping-image"  quality="low" loading="eager"/>
+    </div>
+    <div class="p-4 text-center md:flex-1">
+        <h1 class="text-4xl my-2 lg:text-6xl font-black tracking-tight">Your landscaping needs <span class="text-green-700 underline">end</span> here.</h1>
+        <p class="my-2 md:text-lg lg:text-xl">Expert <span class="font-semibold">Garden Construction</span> and <span class="font-semibold">Landscaping Services</span> in Wembley</p>
+        <a id="contact-us-button" class="inline-block my-2 px-8 py-4 font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg hover:cursor-pointer transition duration-200">Contact Us</a>
         <div class="text-lg font-semibold">Ph: 07423 512753</div>
     </div>
 </div>
+
 <script>
     const contactUsButton = document.getElementById("contact-us-button");
     contactUsButton?.addEventListener("click", () => {

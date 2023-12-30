@@ -1,9 +1,4 @@
----
-import { Image } from "astro:assets";
-
----
-
-<div class="h-18 mx-auto px-4 flex flex-row text-gray-800">
+<div class="h-18 lg:h-24 mx-auto px-4 flex flex-row text-gray-800">
     <div>
         <!-- Website Logo -->
         <a href="#" class="flex items-center py-4 px-2">
@@ -12,17 +7,17 @@ import { Image } from "astro:assets";
     </div>
     <div class="grow"></div>
     <!-- Primary Navbar items -->
-    <!-- <div class="hidden md:flex items-center">
-        <a id="how-we-work-button" href="#about-us" class="py-4 px-4 font-semibold hover:text-green-700 transition duration-300">How we work</a>
-        <a id="" href="#testimonials" class="py-4 px-4 font-semibold hover:text-green-700 transition duration-300">What our customers say</a>
-        <a href="#" class="py-2 px-4 font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Contact Us</a>
-    </div> -->
+    <div class="hidden lg:flex items-center gap-2 text-md">
+        <a id="services-we-offer-link" class="block py-4 px-2 hover:cursor-pointer">Services we offer</a>
+        <a id="how-we-work-link" class="block py-4 px-2  hover:cursor-pointer">How we work</a>
+        <a id="what-our-customers-say-link" class="block py-4 px-2  hover:cursor-pointer">What our customers say</a>
+        <a id="how-to-contact-us-link" class="block py-4 px-2  hover:cursor-pointer">How to contact us</a>
+    </div>
 
     <!-- Mobile menu button -->
-    <div class="md:hidden flex items-center">
+    <div class="lg:hidden flex items-center">
         <button id="mobile-menu-button" class="p-4 outline-none" aria-label="mobile-menu-button">
             <svg class="w-8 h-8 text-gray-800"
-                x-show="!showMenu"
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -52,6 +47,10 @@ import { Image } from "astro:assets";
     const howWeWorkButton = document.getElementById('how-we-work-button');
     const whatOurCustomersSayButton = document.getElementById('what-our-customers-say-button');
     const howToContactUs = document.getElementById("how-to-contact-us-button");
+    const servicesWeOfferLink = document.getElementById("services-we-offer-link");
+    const howWeWorkLink = document.getElementById('how-we-work-link');
+    const whatOurCustomersSayLink = document.getElementById('what-our-customers-say-link');
+    const howToContactUsLink = document.getElementById("how-to-contact-us-link");
 
     btn?.addEventListener("click", () => {
         menu?.classList.toggle("hidden");
@@ -61,9 +60,17 @@ import { Image } from "astro:assets";
         menu?.classList.toggle("hidden");
         document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
     });
+
+    howWeWorkLink?.addEventListener('click', () => {
+        document.getElementById('how-we-work')?.scrollIntoView({ behavior: 'smooth' });
+    });
     
     whatOurCustomersSayButton?.addEventListener('click', () => {
         menu?.classList.toggle("hidden");
+        document.getElementById('what-our-customers-say')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    whatOurCustomersSayLink?.addEventListener('click', () => {
         document.getElementById('what-our-customers-say')?.scrollIntoView({ behavior: 'smooth' });
     });
 
@@ -72,8 +79,16 @@ import { Image } from "astro:assets";
         document.getElementById('services-we-offer')?.scrollIntoView({ behavior: 'smooth' });
     });
 
+    servicesWeOfferLink?.addEventListener('click', () => {
+        document.getElementById('services-we-offer')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
     howToContactUs?.addEventListener('click', () => {
         menu?.classList.toggle("hidden");
+        document.getElementById('how-to-contact-us')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    howToContactUsLink?.addEventListener('click', () => {
         document.getElementById('how-to-contact-us')?.scrollIntoView({ behavior: 'smooth' });
     });
 </script>

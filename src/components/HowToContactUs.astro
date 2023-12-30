@@ -3,18 +3,21 @@ import { Image } from "astro:assets";
 import LocationImage from "../assets/location-image.webp"
 ---
 
-<div id="how-to-contact-us" class="my-4 p-4">
-    <h2 class="my-4 text-3xl font-extrabold text-center tracking-tight"> How to <span class="text-green-700 underline"> contact </span> us.</h2>
-    <Image class="shadow-md rounded-md overflow-hidden" src={LocationImage} alt="Location Image" quality="low"/>
-    <div class="px-4 my-4 flex gap-4">
-        <a href="tel:+447423512753" class="flex-1 inline-block my-2 px-8 py-4 text-center font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Call Us</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=51.57343052626002, -0.26065067093874034" class="flex-1 inline-block my-2 px-8 py-4 text-center font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Directions</a>
+<div id="how-to-contact-us" class="my-4 p-4 md:px-16 flex flex-col gap-4">
+    <h2 class="my-4 text-3xl md:text-4xl font-extrabold text-center tracking-tight"> How to <span class="text-green-700 underline"> contact </span> us.</h2>
+    <div class=" flex flex-col items-center lg:flex-row">
+        <Image class="lg:flex-1 shadow-md rounded-md overflow-hidden" src={LocationImage} alt="Location Image" quality="low"/>
+        <div class="px-4 my-4 flex items-center lg:flex-1 lg:flex-col gap-4">
+            <a href="tel:+447423512753" class="w-48 flex-1 inline-block my-2 px-8 py-4 text-center font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Call Us</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=51.57343052626002, -0.26065067093874034" class="w-48 flex-1 inline-block my-2 px-8 py-4 text-center font-medium text-white bg-green-700 rounded hover:bg-green-600 hover:shadow-lg transition duration-200">Directions</a>
+        </div>
     </div>
+    
     <div class="my-2 flex gap-2 text-center">
-        <h4 class="flex-1 text-lg font-bold">Opening Hours:</h4>
-        <h4 class="flex-1 text-lg font-bold">Address:</h4>
+        <h4 class="flex-1 text-lg md:text-xl font-bold">Opening Hours:</h4>
+        <h4 class="flex-1 text-lg md:text-xl font-bold">Address:</h4>
     </div>
-    <div class="flex gap-2 text-center text-balance">
+    <div class="flex gap-2 text-center text-balance md:text-lg">
         <p class="flex-1 text-md">
             Mon:	8:00 am – 5:00 pm <br/>
             Tue:	8:00 am – 5:00 pm <br/>
