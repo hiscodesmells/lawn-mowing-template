@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/mike-simple-lawn-logo.png"
+import NavBarBurger from "./NavBarBurger.astro";
+import CloseIcon from "./CloseIcon.astro"
+---
+
+<section>
+    <div class="h-20 p-4 flex items-center justify-center text-sm">
+        <div class="flex-1">
+            <Image class="px-4 w-32" src={Logo} alt={"Mike's simple lawns logo"} />
+        </div>
+        <div class="hidden flex-1 lg:flex items-cente justify-evenly text-slate-500 ">
+            <a class="hover:text-slate-900" href="">Services</a>
+            <a class="hover:text-slate-900" href="">Principles</a>
+            <a class="hover:text-slate-900" href="">Testimonials</a>
+        </div>
+        <div class="hidden flex-1 lg:flex justify-end">
+            <a class="p-4 text-green-50 bg-green-500 rounded-md" href="">Contact Us</a>
+        </div>
+
+        <!-- menu burger -->
+        <div id="menu-button" class="lg:hidden">
+            <NavBarBurger />
+        </div>
+    </div>
+
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-30"></div>
+
+    <aside id="sidebar" class="fixed lg:hidden top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0">
+        <div class="h-full p-4 flex flex-col overflow-y-auto bg-white">
+            <div class="flex flex-row items-center justify-between">
+                <Image class="p-2 w-32" src={Logo} alt={"Mike's simple lawns logo"} />
+                <button id="close-menu-button" class="w-6 h-6 flex items-center justify-center"><CloseIcon /></button>
+            </div>
+            <div class="py-16 flex flex-col">
+                <a href="#" class="p-2 text-slate-500">Services</a>
+                <a href="#" class="p-2 text-slate-500">Principles</a>
+                <a href="#" class="p-2 text-slate-500">Testimonials</a>
+            </div>
+            <a href="#" class="my-16 p-2 text-center text-green-50 bg-green-500 rounded-md">Contact Us</a>
+        </div>
+     </aside>
+</section>
+
+<script>
+    let menuButton = document.getElementById("menu-button");
+    let sidebar = document.getElementById("sidebar");
+    let closeMenuButton = document.getElementById("close-menu-button");
+    let overlay = document.getElementById("overlay");
+
+    // Event listener for opening the sidebar
+    menuButton?.addEventListener("click", function () {
+        sidebar?.classList.remove("-translate-x-full");
+        sidebar?.classList.add("translate-x-0");
+        overlay?.classList.remove("hidden");
+    });
+
+    // Event listener for closing the sidebar
+    closeMenuButton?.addEventListener("click", function () {
+        sidebar?.classList.remove("translate-x-0");
+        sidebar?.classList.add("-translate-x-full");
+        overlay?.classList.add("hidden");
+    });
+
+</script>
