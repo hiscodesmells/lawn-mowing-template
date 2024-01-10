@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import Logo from "../assets/mike-simple-lawn-logo.webp"
 import NavBarBurger from "./NavBarBurger.astro";
 import CloseIcon from "./CloseIcon.astro"
@@ -8,9 +7,9 @@ import CloseIcon from "./CloseIcon.astro"
 <section>
     <div class="h-20 p-4 flex items-center justify-center text-sm">
         <div class="flex-1">
-            <Image class="px-4 w-32" src={Logo} alt={"Mike's simple lawns logo"} />
+            <img class="px-4 w-32" srcset={Logo.src} alt={"Mike's simple lawns logo"} loading="eager"/>
         </div>
-        <div class="hidden flex-1 lg:flex items-cente justify-evenly text-slate-500 ">
+        <div class="hidden flex-1 lg:flex items-cente justify-evenly text-slate-500">
             <a class="hover:text-slate-900" href="">Services</a>
             <a class="hover:text-slate-900" href="">Principles</a>
             <a class="hover:text-slate-900" href="">Testimonials</a>
@@ -30,7 +29,7 @@ import CloseIcon from "./CloseIcon.astro"
     <aside id="sidebar" class="fixed lg:hidden top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0">
         <div class="h-full p-4 flex flex-col overflow-y-auto bg-white">
             <div class="flex flex-row items-center justify-between">
-                <Image class="p-2 w-32" src={Logo} alt={"Mike's simple lawns logo"} />
+                <img class="p-2 w-32" srcset={Logo.src} alt={"Mike's simple lawns logo"} />
                 <button id="close-menu-button" class="w-6 h-6 flex items-center justify-center"><CloseIcon /></button>
             </div>
             <div class="py-16 flex flex-col">
